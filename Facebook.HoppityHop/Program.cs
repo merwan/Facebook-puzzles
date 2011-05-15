@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.IO;
 
 namespace Facebook.HoppityHop
 {
@@ -18,9 +19,18 @@ namespace Facebook.HoppityHop
 				Console.WriteLine("You must provide a file name");
 			}
 			var filename = args[0];
-			Console.WriteLine("Hello World!");
 			
-			// TODO: Implement Functionality Here
+			var content = File.ReadAllLines(filename);
+			
+			if (content.Length == 0) {
+				Console.WriteLine("The input file must contain an integer");
+			}
+			
+			var max = Convert.ToInt32(content[0]);
+			
+			for (int i = 0; i < max; i++) {
+				
+			}
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
